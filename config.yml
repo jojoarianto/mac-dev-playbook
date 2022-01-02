@@ -2,8 +2,8 @@
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: false
-configure_terminal: true
-configure_osx: true
+configure_terminal: false
+configure_osx: false
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -11,6 +11,11 @@ dockitems_remove:
   - TV
   - Podcasts
   - 'App Store'
+  - FaceTime
+  - Keynote
+  - Numbers
+  - Pages
+  - Music
 
 dockitems_persist: []
 # - name: "Sublime Text"
@@ -38,6 +43,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - composer
   - doxygen
   - gettext
   - gifsicle
@@ -53,7 +59,7 @@ homebrew_installed_packages:
   - nmap
   - node
   - nvm
-  - php
+  - shivammathur/php/php@7.3
   - ssh-copy-id
   - cowsay
   - readline
@@ -62,10 +68,15 @@ homebrew_installed_packages:
   - wget
   - wrk
   - zsh-history-substring-search
+  - pcre2
+  - shivammathur/extensions/mongodb@7.3
+  - mas # mac app store
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - shivammathur/php
+  - shivammathur/extensions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -73,11 +84,14 @@ homebrew_cask_apps:
   - whatsapp
   - tableplus
   - visual-studio-code
-  - google-chrome
+  - macvim
+  - karabiner-elements
+  # - google-chrome
   # - slack
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 967805235, name: "Paste - Clipboard Manager" }
 mas_email: ""
 mas_password: ""
 
@@ -87,9 +101,7 @@ osx_script: "~/.osx --no-restart"
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
 composer_packages: []
-# - name: drush
-#   state: present # present/absent, default: present
-#   version: "^8.1" # default: N/A
+
 gem_packages: []
 # - name: bundler
 #   state: present # present/absent/latest, default: present
