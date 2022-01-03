@@ -1,0 +1,15 @@
+---
+- name: list visual studio code extensions
+  set_fact:
+    vscode_extensions: "{{ lookup('file', vscode_extensions_file).strip().split('\n') }}"
+  when: vscode_extensions | length <= 0 and vscode_extensions_file is defined
+
+- name: install visual studio code extensions
+  command: code --install-extension {{ item }}
+  with_items: "{{ vscode_extensions }}"
+  register: vscode_install_extension_result
+  changed_when: "'is already installed' not in vscode_install_extension_result.stdout"
+
+- name: enable
+  command: defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+  when: ansible_os_family == 'Darwin'

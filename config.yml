@@ -135,3 +135,14 @@ sublime_package_control:
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
+
+# Set to 'true' to configure Visual Studio Code.
+configure_vscode: true
+vscode_extensions:
+  - vscodevim.vim
+  - ms-azuretools.vscode-docker
+  - waderyan.gitblame
+  - alexcvzz.vscode-sqlite
+  - bmewburn.vscode-intelephense-client
+vscode_homebrew_user: "{{ homebrew_user }}"
+vscode_macos_key_repeat: true
