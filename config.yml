@@ -17,10 +17,10 @@ dockitems_remove:
   - Pages
   - Music
 
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+dockitems_persist:
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 5
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -71,6 +71,8 @@ homebrew_installed_packages:
   - pcre2
   - shivammathur/extensions/mongodb@7.3
   - mas # mac app store
+  - fzf
+  - gnu-tar # for setup fzf to install oh my zsh
 
 homebrew_taps:
   - homebrew/core
@@ -86,6 +88,8 @@ homebrew_cask_apps:
   - visual-studio-code
   - macvim
   - karabiner-elements
+  - iterm2
+  - insomnia
   # - google-chrome
   # - slack
 
@@ -146,3 +150,11 @@ vscode_extensions:
   - bmewburn.vscode-intelephense-client
 vscode_homebrew_user: "{{ homebrew_user }}"
 vscode_macos_key_repeat: true
+
+# Set to 'true' to configure Zsh
+configure_zsh: true
+zsh_antigen_bundles_extras:
+  - nvm
+  - joel-porquet/zsh-dircolors-solarized
+zsh_autosuggestions_bind_key: "^U"
+
