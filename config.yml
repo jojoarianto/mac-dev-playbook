@@ -73,6 +73,7 @@ homebrew_installed_packages:
   - mas # mac app store
   - fzf
   - gnu-tar # for setup fzf to install oh my zsh
+  - yarn
 
 homebrew_taps:
   - homebrew/core
@@ -90,6 +91,7 @@ homebrew_cask_apps:
   - karabiner-elements
   - iterm2
   - insomnia
+  - nosqlbooster-for-mongodb
   # - google-chrome
   # - slack
 
@@ -148,6 +150,7 @@ vscode_extensions:
   - waderyan.gitblame
   - alexcvzz.vscode-sqlite
   - bmewburn.vscode-intelephense-client
+  - golang.go
 vscode_homebrew_user: "{{ homebrew_user }}"
 vscode_macos_key_repeat: true
 
