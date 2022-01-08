@@ -92,6 +92,7 @@ homebrew_cask_apps:
   - iterm2
   - insomnia
   - nosqlbooster-for-mongodb
+  - ngrok
   # - google-chrome
   # - slack
 
@@ -151,6 +152,7 @@ vscode_extensions:
   - alexcvzz.vscode-sqlite
   - bmewburn.vscode-intelephense-client
   - golang.go
+  - octref.vetur
 vscode_homebrew_user: "{{ homebrew_user }}"
 vscode_macos_key_repeat: true
 
